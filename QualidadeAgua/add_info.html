@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Informações</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Adicionar Informações de Qualidade da Água</h1>
+        <form id="addInfoForm" class="mt-4">
+            <div class="form-group">
+                <label for="data">Data dos testes:</label>
+                <input type="date" class="form-control" id="data" name="data" required>
+            </div>
+            <div class="form-group">
+                <label for="balneabilidade">Água própria para banho:</label>
+                <select class="form-control" id="balneabilidade" name="balneabilidade">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ph">pH:</label>
+                <input type="number" step="0.01" class="form-control" id="ph" name="ph">
+            </div>
+            <div class="form-group">
+                <label for="od">Oxigênio Dissolvido (OD) (mg/L):</label>
+                <input type="number" step="0.01" class="form-control" id="od" name="od">
+            </div>
+            <div class="form-group">
+                <label for="dbo">Demanda Bioquímica de Oxigênio (DBO) (mg/L):</label>
+                <input type="number" step="0.01" class="form-control" id="dbo" name="dbo">
+            </div>
+            <div class="form-group">
+                <label for="nitrogenio">Nitrogênio Total (mg/L):</label>
+                <input type="number" step="0.01" class="form-control" id="nitrogenio" name="nitrogenio">
+            </div>
+            <div class="form-group">
+                <label for="fosforo">Fósforo Total (mg/L):</label>
+                <input type="number" step="0.01" class="form-control" id="fosforo" name="fosforo">
+            </div>
+            <div class="form-group">
+                <label for="metais">Possibilidade de contaminação por metais:</label>
+                <input type="text" class="form-control" id="metais" name="metais">
+            </div>
+            <div class="form-group">
+                <label for="sst">Sólidos Suspensos Totais (SST) (mg/L):</label>
+                <input type="number" step="0.01" class="form-control" id="sst" name="sst">
+            </div>
+            <div class="form-group">
+                <label for="coliformes">Coliformes Fecais e E. Coli (UFC/100 mL):</label>
+                <input type="number" step="0.01" class="form-control" id="coliformes" name="coliformes">
+            </div>
+            <div class="form-group">
+                <label for="salinidade">Salinidade (‰):</label>
+                <input type="number" step="0.01" class="form-control" id="salinidade" name="salinidade">
+            </div>
+            <div class="form-group">
+                <label for="mapa">Selecione a localização no mapa:</label>
+                <div id="mapa" style="height: 400px;"></div>
+                <input type="hidden" id="latitude" name="latitude" required>
+                <input type="hidden" id="longitude" name="longitude" required>
+                <input type="hidden" id="bairro" name="bairro" required>
+                <input type="hidden" id="cidade" name="cidade" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            initMapAddInfo();
+        });
+    </script>
+</body>
+</html>

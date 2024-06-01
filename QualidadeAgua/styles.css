@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+#mapa {
+    height: 400px; /* Certifique-se de que o contêiner do mapa tem uma altura definida */
+}
+
+.container {
+    margin-top: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
