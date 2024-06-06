@@ -1,3 +1,5 @@
+import qualityCalculator from "../calcQuality.js";
+
 function populateTable(data) {
     var tableBody = document.getElementById('data-table');
     tableBody.innerHTML = ''; // Limpa a tabela
@@ -7,7 +9,9 @@ function populateTable(data) {
             var row = document.createElement('tr');
             row.innerHTML = `
                 <td>${d.data}</td>
-                <td>${d.balneabilidade}</td>
+                <td>${qualityCalculator.calcBalneability(d.coliformes)}</td>
+                <td>${d.iqa}</td>
+                <td>${d.coliformes}</td>
                 <td>${d.ph}</td>
                 <td>${d.od}</td>
                 <td>${d.dbo}</td>
@@ -15,7 +19,6 @@ function populateTable(data) {
                 <td>${d.fosforo}</td>
                 <td>${d.metais}</td>
                 <td>${d.sst}</td>
-                <td>${d.coliformes}</td>
                 <td>${d.salinidade}</td>
                 <td>${d.bairro}</td>
                 <td>${d.cidade}</td>

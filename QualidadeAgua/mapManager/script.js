@@ -1,30 +1,8 @@
+import qualityCalculator from "../calcQuality.js";
+
 let map; // Declara a variável do mapa fora da função para que seja acessível globalmente
 let markers = []; // Array para armazenar os marcadores
 
-// Função para calcular a distância entre duas coordenadas usando a fórmula de Haversine
-function haversineDistance(coords1, coords2) {
-    function toRad(x) {
-        return x * Math.PI / 180;
-    }
-
-    var lat1 = coords1[0];
-    var lon1 = coords1[1];
-    var lat2 = coords2[0];
-    var lon2 = coords2[1];
-
-    var R = 6371; // Raio da Terra em km
-    var x1 = lat2 - lat1;
-    var dLat = toRad(x1);
-    var x2 = lon2 - lon1;
-    var dLon = toRad(x2);
-    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-            Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
-            Math.sin(dLon / 2) * Math.sin(dLon / 2);
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var d = R * c;
-
-    return d;
-}
 
 // Função para obter o bairro e a cidade a partir das coordenadas
 function getAddress(lat, lon, callback) {
@@ -52,13 +30,12 @@ function initMapAddInfo() {
         attribution: 'Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    var marker;
-
     map.on('click', function (e) {
-        if (marker) {
-            map.removeLayer(marker);
+        if (markers[0] != null) {
+            map.removeLayer(markers[0]);
+            markers.pop();
         }
-        marker = L.marker(e.latlng).addTo(map);
+        markers.push(L.marker(e.latlng).addTo(map));
         document.getElementById('latitude').value = e.latlng.lat;
         document.getElementById('longitude').value = e.latlng.lng;
 
@@ -66,44 +43,10 @@ function initMapAddInfo() {
             document.getElementById('bairro').value = bairro;
             document.getElementById('cidade').value = cidade;
         });
-    });
 
-    document.getElementById('addInfoForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-        var formData = new FormData(this);
-        var data = Object.fromEntries(formData);
-        var existingData = JSON.parse(localStorage.getItem('waterQualityData')) || [];
-        var newPoint = [parseFloat(data.latitude), parseFloat(data.longitude)];
-        var merged = false;
-
-        existingData.forEach(function (item) {
-            var existingPoint = [parseFloat(item.latitude), parseFloat(item.longitude)];
-            if (haversineDistance(newPoint, existingPoint) <= 50) {
-                if (!item.data) {
-                    item.data = [];
-                }
-                item.data.push(data);
-                merged = true;
-            }
+        document.getElementById('addInfoForm').addEventListener('submit', () => {
+            cleanMap();
         });
-
-        if (!merged) {
-            data = {
-                latitude: data.latitude,
-                longitude: data.longitude,
-                bairro: data.bairro,
-                cidade: data.cidade,
-                data: [data]
-            };
-            existingData.push(data);
-        }
-
-        localStorage.setItem('waterQualityData', JSON.stringify(existingData));
-        alert('Informações adicionadas com sucesso!');
-        this.reset();
-        if (marker) {
-            map.removeLayer(marker);
-        }
     });
 }
 
@@ -122,7 +65,8 @@ function initMapViewInfo() {
         markers.push(marker); // Adiciona o marcador ao array de marcadores
         var popupContent = item.data.map(d => `
             <b>Data dos testes:</b> ${d.data}<br>
-            <b>Água própria para banho:</b> ${d.balneabilidade}<br>
+            <b>Balneabilidade:</b> ${qualityCalculator.calcBalneability(d.coliformes)}<br>
+            <b>IQA:</b> ${qualityCalculator.calcIQA(d.iqa)}<br>
             <b>pH:</b> ${d.ph}<br>
             <b>Oxigênio Dissolvido (OD):</b> ${d.od} mg/L<br>
             <b>Demanda Bioquímica de Oxigênio (DBO):</b> ${d.dbo} mg/L<br>
@@ -137,6 +81,12 @@ function initMapViewInfo() {
         `).join('<br><hr><br>');
         marker.bindPopup(popupContent);
     });
+}
+
+const cleanMap = () => {
+    if (map && markers) {
+        markers.forEach(marker => map.removeLayer(marker));
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function () {

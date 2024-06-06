@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="root.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/root.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <title>Estatísticas - AQMoni</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="map.html">
             <img src="src/logo.svg" width="140" class="medium-blue-svg d-inline-block align-middle" alt="" loading="lazy">
         </a>
         <ul class="navbar-nav mr-auto">
@@ -22,7 +22,7 @@
                 <a class="nav-link" href="statisticData.html">Estatísticas</a>
             </li>
         </ul>
-        <a class="nav-link" href="#">Login</a>
+        <a class="nav-link" href="#">Acesse para Colaborar</a>
     </nav>
     <div class="container-fluid px-5">
         <h1 class="mt-5">Informações de Qualidade da Água</h1>
@@ -40,7 +40,9 @@
             <thead>
                 <tr>
                     <th>Data dos Testes</th>
-                    <th>Água Própria para Banho</th>
+                    <th>Balneabilidade</th>
+                    <th>IQA</th>
+                    <th>Coliformes (UFC/100 mL)</th>
                     <th>pH</th>
                     <th>OD (mg/L)</th>
                     <th>DBO (mg/L)</th>
@@ -48,7 +50,6 @@
                     <th>Fósforo (mg/L)</th>
                     <th>Metais</th>
                     <th>SST (mg/L)</th>
-                    <th>Coliformes (UFC/100 mL)</th>
                     <th>Salinidade (‰)</th>
                     <th>Bairro</th>
                     <th>Cidade</th>
@@ -60,6 +61,6 @@
         </table>
     </div>
 
-    <script src="statisticData/script.js"></script>
+    <script type="module" src="statisticData/script.js"></script>
 </body>
 </html>
