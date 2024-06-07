@@ -7,7 +7,7 @@ function register() {
         .then((userCredential) => {
             const user = userCredential.user;
             console.log("Usuário registrado:", user);
-            window.location.href = "../home/index.html"; 
+            window.location.href = "../../index.html"; 
         })
         .catch((error) => {
             const errorCode = error.code;

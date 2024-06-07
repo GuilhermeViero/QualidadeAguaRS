@@ -1,4 +1,4 @@
-import qualityCalculator from "../calcQuality.js";
+import qualityCalculator from "../../calcQuality.js";
 
 let map; // Declara a variável do mapa fora da função para que seja acessível globalmente
 let markers = []; // Array para armazenar os marcadores

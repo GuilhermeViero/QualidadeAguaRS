@@ -8,7 +8,7 @@ function login() {
             // Login bem-sucedido
             var user = userCredential.user;
             console.log("Login bem-sucedido:", user);
-            window.location.href = "pages/home/index.html";
+            window.location.href = "../../index.html";
         })
         .catch((error) => {
             // Tratar erros

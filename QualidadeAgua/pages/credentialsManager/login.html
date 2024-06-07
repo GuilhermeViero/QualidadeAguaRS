@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acesse sua Conta - Nome da Aplicação</title>
+    <title>Acesse sua Conta - AQMoni</title>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
-<script src ="firebase-init.js"></script>
-<script>
-firebase.auth().onAuthStateChanged(user => {
-    if (user) {
-        window.location.href = "pages/home/index.html";
-    }
-});
-</script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src ="../../firebase-init.js"></script>
+    <script>
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                window.location.href = "../../index.html";
+            }
+        });
+    </script>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="login_style.css">
@@ -24,7 +24,7 @@ firebase.auth().onAuthStateChanged(user => {
             <div class="col-md-6 d-flex align-items-center justify-content-center left-side">
                 <div class="text-center">
                     <div class="logo">
-                        <img  src="./download.svg" alt="Logotipo"> 
+                        <img src="../../src/logo.svg" class="medium-blue-svg d-inline-block align-middle" alt="AQMoni" loading="lazy"> 
                     </div>
                     
                     <p class="motto">Monitorando o presente dos Oceanos<br>Protegendo o futuro do Planeta</p>
@@ -51,7 +51,7 @@ firebase.auth().onAuthStateChanged(user => {
                             </div>
                         </div>
                         <button type="button" class="btn btn-primary btn-block" id="login-button" onclick="login()">Acessar</button>
-                        <p class="mt-3"><a href="pages/register/register.html">Criar Conta para Colaborar</a></p>
+                        <p class="mt-3"><a href="./register.html">Criar Conta para Colaborar</a></p>
                     </form>
                 </div>
             </div>

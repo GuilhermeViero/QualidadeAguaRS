@@ -1,4 +1,4 @@
-import qualityCalculator from "../calcQuality.js";
+import qualityCalculator from "../../calcQuality.js";
 
 function populateTable(data) {
     var tableBody = document.getElementById('data-table');
