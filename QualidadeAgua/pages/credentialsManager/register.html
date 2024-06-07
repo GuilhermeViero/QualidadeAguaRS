@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta - AQMoni</title>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="../../firebase-init.js"></script>
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="register_style.css">
+    
+</head>
+<body>
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-md-6 d-flex align-items-center justify-content-center left-side">
+                <div class="text-center text-light">
+                    <div class="logo">
+                        <img src="../../src/logo.svg" class="medium-blue-svg d-inline-block align-middle" alt="AQMoni" loading="lazy"> 
+                    </div>
+                    <div class="container-fluid justify-content-center">
+                        <div class="w-50 text-center mx-auto">
+                            <p>Agentes de Medição do governo e de ONGs,
+                                ou pesquisadores científicos podem criar uma
+                                conta para contribuir com o monitoramento
+                                dos Oceanos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-center justify-content-center right-side">
+                <div class="register-box p-5 m-5">
+                    <form class="text-center">
+                        <h2>Criar Conta</h2>
+                        <small class="form-text text-muted">Precisamos de algumas informações sobre você</small>
+                        <div class="form-group text-left">
+                            <label for="name">Nome:</label>
+                            <input type="text" class="form-control" id="name" placeholder="John Doe" onchange="onChangeName()">
+                            <div class="error" id="name-required-error" style="display: none;">
+                                Nome é obrigatório
+                            </div>
+                        </div>
+                        <div class="form-group text-left">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" placeholder="E-mail" onchange="onChangeEmail()">
+                            <div class="error" id="email-required-error" style="display: none;">
+                                Email é obrigatório
+                            </div>
+                            <div class="error" id="email-invalid-error" style="display: none;">
+                                Email inválido
+                            </div>
+                        </div>
+                        <div class="form-group text-left">
+                            <label for="password">Senha:</label>
+                            <input type="password" class="form-control" id="password" placeholder="********" onchange="onChangePassword()">
+                            <div class="error" id="password-required-error" style="display: none;">
+                                Senha é obrigatória
+                            </div>
+                            <div class="error" id="password-min-length-error" style="display: none;">
+                                A senha deve ter no mínimo 6 caracteres
+                            </div>
+                        </div>
+                        <div class="form-group text-left">
+                            <label for="confirmPassword">Confirmar senha:</label>
+                            <input type="password" class="form-control" id="confirmPassword" placeholder="********" onchange="onChangeConfirmPassword()">
+                            <div class="error" id="password-doesnt-match-error" style="display: none;">
+                                Senha e Confirmar senha devem ser iguais
+                            </div>
+                            <small id="passwordHelp" class="form-text text-muted">Nunca compartilhe suas credenciais de acesso. Segurança é
+                                o primeiro passo para Oceanos mais azuis.</small>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-block" id="register-button" onclick="register()">Criar Conta</button>
+                        <p class="mt-3"><a href="./login.html">Já tenho uma conta</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+   
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="./script_register.js"></script>
+<script src="./script_login.js"></script>
+<script src="../../auth-guard.js"></script>
+</html>

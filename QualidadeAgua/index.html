@@ -3,17 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monitoramento da Qualidade da Água</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles/root.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src ="firebase-init.js"></script>
+    <title>AQMoni</title>
 </head>
 <body>
-    <div class="container text-center">
-        <h1 class="mt-5">Monitoramento da Qualidade da Água - RS</h1>
-        <div class="mt-5">
-            <a href="add_info.html" class="btn btn-primary btn-lg">Adicionar Informações</a>
-            <a href="view_info.html" class="btn btn-secondary btn-lg">Visualizar Informações</a>
-        </div>
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="index.html">
+                <img src="src/logo.svg" width="140" class="medium-blue-svg d-inline-block align-middle" alt="" loading="lazy">
+            </a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Mapa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./pages/statisticData/statisticData.html">Estatísticas</a>
+                </li>
+                <li class="nav-item private">
+                    <a class="nav-link" href="./pages/indicatorsManager/add_info.html">Adicionar Medição</a>
+                </li>
+            </ul>
+            <a class="nav-link public" href="./pages/credentialsManager/login.html">Acesse para Colaborar</a>
+
+            <a class="nav-link private logout" href="#" >Sair</a>
+        </nav>
+
+        <div id="mapa" class="vh-100"></div>
     </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script type="module" src="./pages/mapManager/script.js"></script>
+    <script src="./auth-guard.js"></script>
 </body>
 </html>
