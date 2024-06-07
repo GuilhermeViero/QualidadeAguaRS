@@ -1,0 +1,5 @@
+# temporary local files
+/temp
+
+# Dev environment modules
+/node_modules

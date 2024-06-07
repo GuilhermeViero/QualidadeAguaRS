@@ -6,9 +6,26 @@
     <title>Adicionar Informações</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="map.html">
+            <img src="src/logo.svg" width="140" class="medium-blue-svg d-inline-block align-middle" alt="" loading="lazy">
+        </a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="map.html">Mapa</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="statisticData.html">Estatísticas</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="add_info.html">Adicionar Medição</a>
+            </li>
+        </ul>
+        <a class="nav-link" href="#">Acesse para Colaborar</a>
+    </nav>
     <div class="container">
         <h1 class="mt-5">Adicionar Informações de Qualidade da Água</h1>
         <form id="addInfoForm" class="mt-4">
@@ -17,11 +34,12 @@
                 <input type="date" class="form-control" id="data" name="data" required>
             </div>
             <div class="form-group">
-                <label for="balneabilidade">Água própria para banho:</label>
-                <select class="form-control" id="balneabilidade" name="balneabilidade">
-                    <option value="Sim">Sim</option>
-                    <option value="Não">Não</option>
-                </select>
+                <label for="coliformes">Coliformes Fecais e E. Coli (UFC/100 mL):</label>
+                <input type="number" step="0.01" class="form-control" id="coliformes" name="coliformes">
+            </div>
+            <div class="form-group">
+                <label for="iqa">Índice de Qualidade da Água:</label>
+                <input type="number" step="0.01" class="form-control" id="iqa" name="iqa">
             </div>
             <div class="form-group">
                 <label for="ph">pH:</label>
@@ -52,10 +70,6 @@
                 <input type="number" step="0.01" class="form-control" id="sst" name="sst">
             </div>
             <div class="form-group">
-                <label for="coliformes">Coliformes Fecais e E. Coli (UFC/100 mL):</label>
-                <input type="number" step="0.01" class="form-control" id="coliformes" name="coliformes">
-            </div>
-            <div class="form-group">
                 <label for="salinidade">Salinidade (‰):</label>
                 <input type="number" step="0.01" class="form-control" id="salinidade" name="salinidade">
             </div>
@@ -72,11 +86,7 @@
     </div>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            initMapAddInfo();
-        });
-    </script>
+    <script src="indicatorsManager/script.js"></script>
+    <script type="module" src="mapManager/script.js"></script>
 </body>
 </html>

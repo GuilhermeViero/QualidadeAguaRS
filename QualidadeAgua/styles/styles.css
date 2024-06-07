@@ -14,3 +14,7 @@ body {
 h1 {
     margin-bottom: 20px;
 }
+
+.medium-blue-svg{
+    filter: invert(30%) sepia(61%) saturate(2323%) hue-rotate(191deg) brightness(92%) contrast(97%);
+}
