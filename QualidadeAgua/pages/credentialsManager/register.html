@@ -3,16 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Conta - AQMoni</title><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <title>Criar Conta - AQMoni</title>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
     <script src="../../firebase-init.js"></script>
-    <script>
-        firebase.auth().onAuthStateChanged(user => {
-            if (user) {
-                window.location.href = "../../index.html";
-            }
-        });
-    </script>
     
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="register_style.css">
@@ -93,4 +87,5 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="./script_register.js"></script>
 <script src="./script_login.js"></script>
+<script src="../../auth-guard.js"></script>
 </html>

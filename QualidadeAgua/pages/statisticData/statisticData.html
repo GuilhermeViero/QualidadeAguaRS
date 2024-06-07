@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src ="../../firebase-init.js"></script>
     <link rel="stylesheet" href="../../styles/root.css">
     <link rel="stylesheet" href="../../styles/styles.css">
     <title>Estatísticas - AQMoni</title>
@@ -21,8 +24,13 @@
             <li class="nav-item active">
                 <a class="nav-link" href="statisticData.html">Estatísticas</a>
             </li>
+            <li class="nav-item private">
+                <a class="nav-link" href="../indicatorsManager/add_info.html">Adicionar Medição</a>
+            </li>
         </ul>
-        <a class="nav-link" href="../credentialsManager/login.html">Acesse para Colaborar</a>
+        <a class="nav-link public" href="../credentialsManager/login.html">Acesse para Colaborar</a>
+
+        <a class="nav-link private logout" href="#" >Sair</a>
     </nav>
     <div class="container-fluid px-5">
         <h1 class="mt-5">Informações de Qualidade da Água</h1>
@@ -62,5 +70,6 @@
     </div>
 
     <script type="module" src="./script.js"></script>
+    <script src="../../auth-guard.js"></script>
 </body>
 </html>
