@@ -156,7 +156,7 @@ Se você tem alguma ideia, sugestão, ou viu algum erro, você pode nos contar [
 
 [issues]: https://github.com/GustavoHerreroNunes/AQMoni/issues
 
-[gs2024]: https://www.fiap.com.br/global-solutions/
+[gs2024]: https://www.fiap.com.br/graduacao/global-solution/
 
 <!--Files-->
 [bpmn-pdf]: https://github.com/GustavoHerreroNunes/AQMoni/blob/main/sistemaMonitoramentoAgua.pdf
