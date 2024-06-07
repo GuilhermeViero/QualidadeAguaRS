@@ -166,5 +166,5 @@ Se você tem alguma ideia, sugestão, ou viu algum erro, você pode nos contar [
 <!--Images-->
 
 [project-banner]: https://github.com/GustavoHerreroNunes/AQMoni/blob/main/readme-src/banner.jpg
-[access-address]: https://github.com/GustavoHerreroNunes/AQMoni/blob/main/readme-src/access-address.jpg
+[access-address]: https://github.com/GustavoHerreroNunes/AQMoni/blob/main/readme-src/access-terminal.jpg
 [color-palette]:  https://github.com/GustavoHerreroNunes/AQMoni/blob/main/readme-src/color-palette.png
