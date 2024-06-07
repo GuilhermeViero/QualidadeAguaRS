@@ -10,7 +10,7 @@
 
 :cd: [Descrição](#descrição-clipboard) 
 
-:cd: [Funcionalidades](#funcionalidade-gear)    
+:cd: [Funcionalidades](#funcionalidades-gear)    
 
 :cd: [Modelagem de Processos](#modelagem-de-processos-twisted_rightwards_arrows)
 
@@ -79,6 +79,13 @@ A modelagem de processos foi realizada com a notação BPMN (Business Process Mo
 Um protótipo de interface gráfica (UI Mockup) foi desenvolvido através do **Figma**, e pode ser acessado através do [arquivo pdf de UI Mockup][ui-mockup].
 
 Uma paleta de cores acessível para pessoas com daltonismo foi utilizada, e a interface foi pensada para ser responsiva e acessível, com regras de contraste e tamanhos de fontes adequados.
+
+### Paleta de Cores
+| Dark Blue | Light Blue | Beige  | Mustard Yellow | Light Green | Dark Green | Dark Red |
+| --- | --- | --- | --- | --- | --- | --- |
+| #023E73 | #2DBDF7 | #F2E1AE | #E6A63E | #488E34 | #377027 | #B02502 |
+
+![Paleta de Cores][color-palette]
 
 ## Backlog de Inovação :white_check_mark:
 
@@ -159,4 +166,5 @@ Se você tem alguma ideia, sugestão, ou viu algum erro, você pode nos contar [
 <!--Images-->
 
 [project-banner]: https://github.com/GustavoHerreroNunes/AQMoni/blob/main/readme-src/banner.jpg
-[access-address]: https://github.com/GustavoHerreroNunes/AQMoni/blob/main/readme-src/access-address.png
+[access-address]: https://github.com/GustavoHerreroNunes/AQMoni/blob/main/readme-src/access-address.jpg
+[color-palette]:  https://github.com/GustavoHerreroNunes/AQMoni/blob/main/readme-src/color-palette.png
