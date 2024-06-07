@@ -91,3 +91,7 @@ function filterData() {
     //     marker.bindPopup(popupContent);
     // });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('btnFilter').addEventListener('click', filterData);
+});
