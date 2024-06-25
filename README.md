@@ -4,7 +4,7 @@
 
 <!--Tecnologias Utilizadas e suas versões-->
 
-> Status: 🏭 Em desenvolvimento
+> Status: ✔️ Concluído
 
 ## Indíce :bookmark_tabs:
 
